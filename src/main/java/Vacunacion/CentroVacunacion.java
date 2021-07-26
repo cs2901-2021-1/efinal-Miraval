@@ -1,4 +1,4 @@
-package Vacunacion;
+package vacunacion;
 
 import java.security.SecureRandom;
 import java.util.Vector;
@@ -7,7 +7,6 @@ public class CentroVacunacion {
     private String nombre;
     private Vector<Persona> personasAsignadas = new Vector<>();
     private int porVacunar;
-    private String status;
     SecureRandom random = new SecureRandom();
 
     CentroVacunacion(String nombre){
@@ -16,8 +15,7 @@ public class CentroVacunacion {
         for(int i = 0; i < porVacunar; i++){
             personasAsignadas.addElement(new Persona());
         }
-        status = "DESACTIVADO";
-    };
+    }
 
     int getVacunados(){
         var vacunadosParcial = 0;
@@ -45,3 +43,4 @@ public class CentroVacunacion {
         return porVacunar;
     }
 }
+
