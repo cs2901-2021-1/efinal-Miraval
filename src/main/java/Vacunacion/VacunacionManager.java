@@ -1,4 +1,4 @@
-package Vacunacion;
+package vacunacion;
 
 
 import java.util.HashMap;
@@ -16,11 +16,11 @@ public class VacunacionManager{
         //
     }
 
-    public static VacunacionManager Instantiate(){
+    public static VacunacionManager instantiate(){
         return manager;
     }
 
-    public static int Authenticate(String username, String password){
+    public static int authenticate(String username, String password){
         if (username.length() != password.length()){
             logger.info("Not authorized");
             return 401;
@@ -62,4 +62,5 @@ public class VacunacionManager{
     };
 
 }
+
 
