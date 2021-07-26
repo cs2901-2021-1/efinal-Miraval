@@ -9,7 +9,7 @@ public class VacunacionManager{
     static final Logger logger = Logger.getLogger(VacunacionManager.class.getName());
     private static final VacunacionManager manager = new VacunacionManager();
     HashMap<String, CentroVacunacion> centrosVacunacion = new HashMap<>();
-    static float TOTAL_VACUNATION = 22935533;
+    static float totalVacunation = 22935533;
 
 
     VacunacionManager(){
@@ -40,15 +40,15 @@ public class VacunacionManager{
         for (var center : this.centrosVacunacion.values()){
             vacunados = vacunados + center.getVacunados();
         }
-        return vacunados*100/TOTAL_VACUNATION;
+        return vacunados*100/ totalVacunation;
     }
 
     public float coberturaVacunacion(){
         var vacunados = 0;
         for (var center : this.centrosVacunacion.values()){
-            vacunados = vacunados + center.getVacunados();
+            vacunados = vacunados + center.getVacunadosCompleto();
         }
-        return vacunados*100/TOTAL_VACUNATION;
+        return vacunados*100/ totalVacunation;
     }
 
     public int numeroCentrosVacunacion(){
