@@ -7,7 +7,6 @@ public class CentroVacunacion {
     private String nombre;
     private Vector<Persona> personasAsignadas = new Vector<>();
     private int porVacunar;
-    private int vacunados;
     private String status;
     SecureRandom random = new SecureRandom();
 
@@ -17,12 +16,27 @@ public class CentroVacunacion {
         for(int i = 0; i < porVacunar; i++){
             personasAsignadas.addElement(new Persona());
         }
-        vacunados = 0;
         status = "DESACTIVADO";
     };
 
     int getVacunados(){
-        return vacunados;
+        var vacunadosParcial = 0;
+        for(var persona : personasAsignadas){
+            if(persona.getStatus().equals("PrimeraDosis")){
+                vacunadosParcial = vacunadosParcial+1;
+            }
+        }
+        return vacunadosParcial;
+    }
+
+    int getVacunadosCompleto(){
+        var vacunadosCompleto = 0;
+        for(var persona : personasAsignadas){
+            if(persona.getStatus().equals("Completo")){
+                vacunadosCompleto = vacunadosCompleto+1;
+            }
+        }
+        return vacunadosCompleto;
     }
 
     String getNombre(){return nombre;}
