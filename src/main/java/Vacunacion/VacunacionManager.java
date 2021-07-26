@@ -52,7 +52,7 @@ public class VacunacionManager{
     }
 
     public int numeroCentrosVacunacion(){
-        return this.centrosVacunacion.size();};
+        return this.centrosVacunacion.size();}
 
     public int personasVacunadasParcial(){
         var vacunados = 0;
