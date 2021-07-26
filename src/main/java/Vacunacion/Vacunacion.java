@@ -1,4 +1,4 @@
-package Vacunacion;
+package vacunacion;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -13,39 +13,54 @@ public class Vacunacion {
 
 
     public static void main(String[] args){
-        Authenticate();
+        authenticate();
     }
 
-    public static void Authenticate(){
-        viewManager.AuthenticatotView();
+    public static void authenticate(){
+        viewManager.authenticatotView();
         var username = scanner.next();
         var password = scanner.next();
-        VacunacionManager.Authenticate(username, password);
-        int code = VacunacionManager.Authenticate(username, password);
+        VacunacionManager.authenticate(username, password);
+        int code = VacunacionManager.authenticate(username, password);
         if (code == 200){
             state = "AUTHENTICATED";
             viewManager.mainView();
             mainMenu();
         }
         else if (code == 401){
-            Authenticate();
+            authenticate();
         }
     }
 
     public static void mainMenu(){
         var option = scanner.next();
         if (option.equals("A")){
-            viewManager.ReporteConsolidado();
+            viewManager.reporteConsolidado();
+            viewManager.mainView();
+            mainMenu();
+        }
+        else if (option.equals("B")){
+            viewManager.administrarCentros();
+            viewManager.mainView();
+            mainMenu();
+        }
+        else if (option.equals("C")){
+            viewManager.verReportePorRango();
             viewManager.mainView();
             mainMenu();
         }
         else if (option.equals("D")){
-            viewManager.CerrarSesion();
-            Authenticate();
+            viewManager.cerrarSesion();
+            authenticate();
+        }
+        else{
+            viewManager.mainView();
+            mainMenu();
         }
     }
 
 
 
 }
+
 
