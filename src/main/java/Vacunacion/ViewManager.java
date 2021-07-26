@@ -30,8 +30,12 @@ public class ViewManager {
 
     public void ReporteConsolidado(){
         var view = "";
-        view += "Avance de la vacunacion: ";
-        VacunacionManager.
+        view += "Avance de la vacunación: \n";
+        view += "Avance de la vacunación: " + VacunacionManager.Instantiate().avanceVacunacion() + " %\n";
+        view += "Cobertura de la vacunación: " + VacunacionManager.Instantiate().coberturaVacunacion() + " %\n";
+        view += "Número de centros de vacunación: " + VacunacionManager.Instantiate().numeroCentrosVacunacion() + "\n";
+        view += "Número de personas vacunadas completamente: " + VacunacionManager.personasVacunadasCompleto() + "\n";
+        logger.info(view);
     }
 
     public void AdministrarCentros(){}
@@ -40,3 +44,4 @@ public class ViewManager {
 
     public void CerrarSesion(){}
 }
+
