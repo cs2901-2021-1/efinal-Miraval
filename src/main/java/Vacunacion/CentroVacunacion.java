@@ -1,11 +1,11 @@
 package vacunacion;
 
 import java.security.SecureRandom;
-import java.util.Vector;
+import java.util.LinkedList;
 
 public class CentroVacunacion {
     private String nombre;
-    private Vector<Persona> personasAsignadas = new Vector<>();
+    private LinkedList<Persona> personasAsignadas = new LinkedList<>();
     private int porVacunar;
     SecureRandom random = new SecureRandom();
 
@@ -13,7 +13,7 @@ public class CentroVacunacion {
         this.nombre = nombre;
         porVacunar = random.nextInt(20000);
         for(int i = 0; i < porVacunar; i++){
-            personasAsignadas.addElement(new Persona());
+            personasAsignadas.add(new Persona());
         }
     }
 
@@ -43,4 +43,3 @@ public class CentroVacunacion {
         return porVacunar;
     }
 }
-
