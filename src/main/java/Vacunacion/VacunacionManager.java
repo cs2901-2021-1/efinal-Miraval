@@ -41,7 +41,7 @@ public class VacunacionManager{
             vacunados = vacunados + center.getVacunados();
         }
         return vacunados*100/TOTAL_VACUNATION;
-    };
+    }
 
     public float coberturaVacunacion(){
         var vacunados = 0;
@@ -49,18 +49,24 @@ public class VacunacionManager{
             vacunados = vacunados + center.getVacunados();
         }
         return vacunados*100/TOTAL_VACUNATION;
-    };
+    }
 
     public int numeroCentrosVacunacion(){
         return this.centrosVacunacion.size();};
 
     public int personasVacunadasParcial(){
-        return 0;
+        var vacunados = 0;
+        for (var center : this.centrosVacunacion.values()){
+            vacunados = vacunados + center.getVacunados();
+        }
+        return vacunados;
     }
-    public static int personasVacunadasCompleto(){
-        return 0;
-    };
+    public int personasVacunadasCompleto(){
+        var vacunados = 0;
+        for (var center : this.centrosVacunacion.values()){
+            vacunados = vacunados + center.getVacunadosCompleto();
+        }
+        return vacunados;
+    }
 
 }
-
-
