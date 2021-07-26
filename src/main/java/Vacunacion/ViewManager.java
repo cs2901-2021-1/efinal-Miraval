@@ -34,7 +34,7 @@ public class ViewManager {
         view += "Avance de la vacunación: " + VacunacionManager.instantiate().avanceVacunacion() + " %\n";
         view += "Cobertura de la vacunación: " + VacunacionManager.instantiate().coberturaVacunacion() + " %\n";
         view += "Número de centros de vacunación: " + VacunacionManager.instantiate().numeroCentrosVacunacion() + "\n";
-        view += "Número de personas vacunadas completamente: " + VacunacionManager.personasVacunadasCompleto() + "\n";
+        view += "Número de personas vacunadas completamente: " + VacunacionManager.instantiate().personasVacunadasCompleto() + "\n";
         logger.info(view);
     }
 
