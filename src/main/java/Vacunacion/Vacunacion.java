@@ -34,7 +34,12 @@ public class Vacunacion {
 
     public static void mainMenu(){
         var option = scanner.next();
-        if (option.equals("D")){
+        if (option.equals("A")){
+            viewManager.ReporteConsolidado();
+            viewManager.mainView();
+            mainMenu();
+        }
+        else if (option.equals("D")){
             viewManager.CerrarSesion();
             Authenticate();
         }
@@ -43,3 +48,4 @@ public class Vacunacion {
 
 
 }
+
