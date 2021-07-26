@@ -1,4 +1,4 @@
-package Vacunacion;
+package vacunacion;
 
 import java.util.logging.Logger;
 
@@ -10,7 +10,7 @@ public class ViewManager {
 
     }
 
-    public void AuthenticatotView(){
+    public void authenticatotView(){
         var menu = " ";
         menu = menu + "Bienvenido al manager  de vacunación.\n";
         menu = menu + "Por favor ingresa tu usuario y contraseña:\n";
@@ -28,20 +28,27 @@ public class ViewManager {
         logger.info(view);
     }
 
-    public void ReporteConsolidado(){
+    public void reporteConsolidado(){
         var view = "";
         view += "Avance de la vacunación: \n";
-        view += "Avance de la vacunación: " + VacunacionManager.Instantiate().avanceVacunacion() + " %\n";
-        view += "Cobertura de la vacunación: " + VacunacionManager.Instantiate().coberturaVacunacion() + " %\n";
-        view += "Número de centros de vacunación: " + VacunacionManager.Instantiate().numeroCentrosVacunacion() + "\n";
+        view += "Avance de la vacunación: " + VacunacionManager.instantiate().avanceVacunacion() + " %\n";
+        view += "Cobertura de la vacunación: " + VacunacionManager.instantiate().coberturaVacunacion() + " %\n";
+        view += "Número de centros de vacunación: " + VacunacionManager.instantiate().numeroCentrosVacunacion() + "\n";
         view += "Número de personas vacunadas completamente: " + VacunacionManager.personasVacunadasCompleto() + "\n";
         logger.info(view);
     }
 
-    public void AdministrarCentros(){}
+    public void administrarCentros(){
+        logger.info("Funcionalidad no implementada\n");
+    }
 
-    public void VerReportePorRango(){}
+    public void verReportePorRango(){
+        logger.info("Funcionalidad no implementada\n");
+    }
 
-    public void CerrarSesion(){}
+    public void cerrarSesion(){
+        var view = "";
+        view += "\nCerraste sesión\n\n";
+        logger.info(view);
+    }
 }
-
